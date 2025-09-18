@@ -7,53 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   <!-- Hero Section -->
-  <section class="hero">
-    <!-- Navbar -->
-    <nav>
-      <img src="image/tree.jpg" alt="Logo">
-      <h2>Evergreen</h2>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Service</a></li>
-        <li><a href="#">Career</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- Navbar -->
+  <nav>
+    <img src="image/tree.jpg" alt="Logo">
+    <div class="logo" aria-label="Evergreen logo">Evergreen</div>
+    <ul class="menu" role="menubar">
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Home</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">About</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Service</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Career</a></li>
+      <li role="none"><a href="#" role="menuitem" tabindex="0">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="head">
-         <h1>Welcome to the Evergreen Web Page</h1>
+  <!-- Hero Section -->
+  <section class="hero" aria-label="Hero section with heading and contact form">
+    <div class="hero-left">
+      <h1>Towards a Greener Future</h1>
+      <p>Greenery brings freshness and positivity to our lives. A sustainable lifestyle with more trees, clean air, and eco-friendly practices creates a healthy environment for future generations. Together, let’s build a greener and brighter tomorrow</p>
+      <button class="btn-click" type="button" aria-label="Click Me button">Click Me</button>
     </div>
- 
-    <div class="hero-text">
-        <p>Evergreen calls on 240 ports worldwide in about 80 countries, <br>
-            and is the seventh-largest company in the shipping industry.
-            Its principal trading routes are East Asia to North America,<br>
-            Central America and the Caribbean; East Asia to the Mediterranean and Northern Europe;<br> 
-            Europe to the east coast of North America;<br>
-            East Asia to Australia; East Asia to eastern and southern Africa; East Asia to South America; <br> 
-            and an intra Asia service linking ports in East Asia to the Persian Gulf and the Red Sea</p>
-    </div>
-
-    <div class="button">
-        <button class="btn">More Details</button>
-    </div>
-
-    <div class="form-box">
-        <h3>Connect with us...</h3>
-        <input type="text" placeholder="Your name...">
-        <input type="email" placeholder="Your email...">
-        <input type="text" placeholder="Your phone...">
-        <input type="number" placeholder="Your age...">
-        <button>SUBMIT</button>
-      </div>
+    <div class="hero-right" aria-label="Contact form">
+      <h2>Connect with us…</h2>
+      <form>
+        <input type="text" name="name" placeholder="Name" required aria-required="true" />
+        <input type="email" name="email" placeholder="Email" required aria-required="true" />
+        <input type="tel" name="phone" placeholder="Phone" pattern="[0-9+ -]{7,15}" aria-describedby="phoneHelp" />
+        <input type="number" name="age" placeholder="Age" min="1" max="120" />
+        <button type="submit" aria-label="Submit contact form">Submit</button>
+      </form>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="services">
-    <h2>Our <span>Services</span></h2>
+  <section class="services" aria-label="Our Services">
+    <h2>Our Services</h2>
+    <!-- You can add service cards or descriptions here -->
+  </section>
   </section>
  </body>
 </html>

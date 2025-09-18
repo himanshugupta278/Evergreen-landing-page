@@ -1,150 +1,263 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Import Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-body{
-    background-size: cover;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-image: url("image/forest.png");
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 30px;
-    padding: 15px 50px;
-    border: 2px solid rgba(225,225,255,0.18);
-    box-shadow: 0px 0px 30px rgba(227, 228, 238, 0.37);
-    backdrop-filter: blur(30px);
-}
-
-h2{
-    font-size: 30px;
-    color: rgb(248, 250, 248);
-    margin-right: 60%;
-}
-
-nav img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff; 
-    font-weight: 500;
-}
-
-nav ul li a:hover {
-    color: rgb(44, 129, 11);
-}
-
-.head h1 {
-    font-size: 40px;
-    color: white;
-    text-align: center;
-    text-shadow: 
-        0 0 5px #000000,
-        0 0 10px #000000,
-        0 0 20px #000000;
-    filter: blur(0.5px);  
-}
-
-.hero-text {
-    width: 55%;
-    font-size: 20px;
-    margin: 100px 150px ;  /* centered with top margin */
-    text-align: left;
-    color: white;
-    text-shadow: 
-        0 0 5px #5a5a5a,
-        0 0 10px #615f5f,
-        0 0 20px #6e6e6e;
-    filter: blur(0.5px);  
-}
-
-
-.btn {
-    padding: 12px 30px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    border-radius: 30px;
-    background: rgba(40, 167, 69, 0.2);  
-    backdrop-filter: blur(10px); 
-    cursor: pointer;
-   margin: -300px 450px;
-   transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-
-.btn:hover {
-    background: rgba(40, 167, 69, 0.4);  
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border-color: rgba(255, 255, 255, 0.6);
-}
-
-.form-box {
-      width: 300px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .form-box h3 {
-      margin-bottom: 15px;
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #f0f0f0;
+      background: url("image/mountain.jpg") no-repeat center center/cover;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Dark overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 50, 20, 0.5);
+      z-index: 0;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(10px);
+      background: rgba(255 255 255 / 0.1);
+      z-index: 10;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    
+    nav img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+
+    /* Logo placeholder */
+    .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #a3d977; /* soft green */
+      user-select: none;
+      margin-right: 1250px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Menu */
+    ul.menu {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    ul.menu li {
+      position: relative;
+    }
+
+    ul.menu li a {
+      text-decoration: none;
+      color: #f0f0f0;
+      font-weight: 500;
+      font-size: 1rem;
+      padding-bottom: 3px;
+      transition: color 0.3s ease;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    /* Underline animation on hover */
+    ul.menu li a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #a3d977;
+      transition: width 0.3s ease;
+      border-radius: 2px;
+    }
+
+    ul.menu li a:hover {
+      color: #a3d977;
+    }
+
+    ul.menu li a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8rem 5vw 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    /* Left side text */
+    .hero-left {
+      flex: 1 1 400px;
+      color: #f0f0f0;
+      max-width: 600px;
+    }
+
+    /* Heading color depends on background contrast */
+    .hero-left h1 {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #f0f0f0;
+      text-shadow: 0 0 5px rgba(0,0,0,0.7);
+    }
+
+    .hero-left p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      color: #d9f0c1;
+      text-shadow: 0 0 3px rgba(0,0,0,0.5);
+    }
+
+    /* Click Me button */
+    .btn-click {
+      background-color: transparent;
+      border: 2px solid #a3d977;
+      color: #a3d977;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: none;
+      user-select: none;
+    }
+
+    .btn-click:hover {
+      background-color: #a3d977;
+      color: #fff;
+      box-shadow: 0 0 15px #a3d977;
+    }
+
+    /* Right side form */
+    .hero-right {
+      flex: 1 1 350px;
+      background: rgba(255 255 255 / 0.15);
+      backdrop-filter: blur(15px);
+      border-radius: 15px;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 8px 32px 0 rgba(0,0,0,0.25);
+      color: #f0f0f0;
+      max-width: 400px;
+      user-select: none;
+    }
+
+    .hero-right h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #a3d977;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    form input {
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      outline: none;
+      background: rgba(255 255 255 / 0.3);
+      color: #f0f0f0;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    form input::placeholder {
+      color: #d9f0c1;
+    }
+
+    form input:focus {
+      background: rgba(255 255 255 / 0.5);
+      box-shadow: 0 0 8px #a3d977;
       color: #000;
     }
 
-    .form-box input {
-      width: 100%;
-      padding: 8px;
-      margin: 8px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .form-box button {
-      width: 100%;
-      padding: 10px;
+    form button {
+      margin-top: 1rem;
+      background-color: #a3d977;
       border: none;
-      border-radius: 5px;
-      background: green;
+      padding: 0.85rem 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 30px;
       color: #fff;
-      font-weight: bold;
       cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      user-select: none;
     }
 
-    .form-box button:hover {
-      background: darkgreen;
+    form button:hover {
+      box-shadow: 0 0 15px #a3d977;
     }
 
     /* Services Section */
     .services {
+      max-width: 1200px;
+      margin: 3rem auto 5rem;
+      padding: 0 5vw;
       text-align: center;
-      margin: 40px 0;
+      color: #f0f0f0;
+      position: relative;
+      z-index: 1;
     }
 
     .services h2 {
-      font-size: 1.8rem;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #a3d977;
+      display: inline-block;
+      position: relative;
     }
 
-    .services h2 span {
-      color: green;
-      border-bottom: 2px solid green;
-      padding-bottom: 3px;
+    /* Thin green underline */
+    .services h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #a3d977;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
     }
+
+    
